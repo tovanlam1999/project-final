@@ -84,6 +84,10 @@ export default function AddCard(props) {
                 <p>Tổng Cộng</p>
                 <span className="Modal_total-price">{totalPrice + ",000đ"}</span>
             </div>
+            <div className="Modal_total">
+                <p>Tổng Cộng</p>
+                <span className="Modal_total-price">{totalPrice + ",000đ"}</span>
+            </div>
         </div>
     );
 }
