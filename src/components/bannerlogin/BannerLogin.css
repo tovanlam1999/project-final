@@ -1,0 +1,126 @@
+.BannerLogin_wrap {
+    background-image: url(../../img/banner-dt.jpg);
+    height: 700px;
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: top, right;
+}
+
+.BannerLogin {
+    position: relative;
+}
+
+.BannerLogin_img {
+    position: absolute;
+    top: 250px;
+    left: 30%;
+    width: 20%;
+}
+
+.BannerLogin_content {
+    position: absolute;
+    right: 10%;
+    top: 50px;
+    width: 35%;
+}
+.BannerLogin_content h2 {
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+.BannerLogin_content h4 {
+    font-weight: 600;
+    font-family: var(--font-serif);
+}
+
+.BannerLogin_content span {
+    color: var(--color-primery);
+    margin: 10px 0 20px;
+    display: block;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: var(--font-serif);
+}
+
+.BannerLogin_content button {
+    display: inline-block;
+    width: 40%;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: var(--color-btn);
+    color: #fff;
+    transition: 0.5s;
+    border-radius: 30px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.BannerLogin_content button:hover::after {
+    height: 500%;
+
+}
+
+.BannerLogin_content button::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-primery);
+    width: 100%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%) translateY(-50%) rotate(-25deg);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.BannerLogin_app {
+    display: flex;
+    width: 100%;
+    margin-top: 40px;
+    cursor: pointer;
+    
+
+}
+
+.BannerLogin_app a {
+    margin-right: 20px;
+    transition: 0.5s;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.BannerLogin_app a:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+@media (max-width:1023px) {
+    .BannerLogin_img {
+        display: none;
+    }
+}
+@media (max-width:767px) {
+    .BannerLogin_content  {
+        right: 50%;
+        transform: translateX(50%);
+        width: 70%;
+    }
+}
+@media (max-width:390px) {
+    .BannerLogin_content button {
+        width: 60%;
+    }
+    .BannerLogin_wrap {
+        height: 900px;
+    }
+    .BannerLogin_app {
+        flex-direction: column;
+    }
+    .BannerLogin_app a {
+       width: 70%;
+       margin: 20px auto 0;
+    }
+}

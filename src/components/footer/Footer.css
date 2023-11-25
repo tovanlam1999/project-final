@@ -1,0 +1,132 @@
+
+h3,h2 {
+    font-family: 'Chewy', cursive;
+}
+
+.footer {
+    background-image: url(../../img/footer.jpg);
+    height: 500px;
+    margin: 50px 0 0 0;
+    padding: 50px 0;
+    position: relative;
+    font-family: 'Chewy', cursive;
+    background-position: top right;
+}
+.footer::after {
+    background-color: #00000009;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.Content {
+    width: 65%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    font-family: Montserrat, sans-serif;
+}
+
+.Content_item h3 {
+    font-size: 22px;
+    color: #000;
+    font-weight:600;
+}
+.Content_item ul {
+    margin: 20px 0; 
+    cursor: pointer;  
+}
+.Content_item ul li {
+    margin: 20px 0;
+    transition: 0.5s;
+    font-size: 14px;
+}
+.Content_item ul li:hover {
+    color:var(--color-primery) ;
+}
+.Content_item ul li i {
+    margin-right: 10px;
+}
+.Content_item-email {
+    position: relative;
+    color: #fff;
+}
+.Content_item-email input {
+    padding: 12px 15px;
+    width: 100%;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+}
+.Content_item-email button {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translate(-50%,-50%);
+    outline: none;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    transition: 0.5s;
+}
+.Content_item-email button:hover {
+    color: var(--color-primery);
+}
+::placeholder {
+    color: #fff;
+}
+
+
+.Content_item h3 {
+    margin: 20px 0;
+    line-height: 30px;
+}
+.Content_item-social {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Content_item-social i {
+    transition: 0.5s;
+
+}
+.Content_item-social i:hover {
+    color: var(--color-primery);
+}
+
+@media (max-width:1023px) {
+    .Content {
+        position: unset;
+        transform: none;
+        width: 70%;
+        margin:  0 auto;
+    }
+    .add-width {
+        width: 50%;
+        flex: 0 0 auto
+    }
+    .footer::after {
+        z-index: -1;
+    }
+    .footer {
+        height: 100%;
+    }
+}
+
+@media (max-width:768px) {
+    .footer_row  {
+        flex-direction: column;
+    }
+    .Content_item  {
+        width: 100%;
+    }
+}

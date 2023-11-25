@@ -1,0 +1,172 @@
+.AllProDuct {
+    text-align: center;
+    cursor: pointer;
+    margin: 50px 0;
+    position: relative;
+}
+
+.AllProDuct_hedding {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.AllProDuct_hedding h2 {
+    font-size: 30px;
+    color: #aaa;
+}
+
+.AllProDuct_border-animation>.active {
+    color: var(--color-btn);
+}
+
+.AllProDuct_row {
+    flex-wrap: unset;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+.AllProDuct .prev-green {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.AllProDuct .prev-green div {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid var(--color-primery);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-primery);
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.AllProDuct .prev-green div:hover::after {
+    height: 250%;
+
+}
+
+.AllProDuct .prev-green div:hover i {
+    color: #fff;
+    z-index: 3;
+}
+
+.AllProDuct .prev-green div i {
+    transition: 0.5s;
+}
+
+.prev-green div::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-primery);
+    width: 150%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%) translateY(-50%) rotate(-25deg);
+    transition: 1s;
+    z-index: -1;
+}
+
+
+.AllProDuct_border-animation.active {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.AllProDuct_border-top.active {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #f17338, #fcc23f);
+    animation: animate-boder-top 2s linear infinite;
+}
+
+.AllProDuct_border-right.active {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #f17338, #fcc23f);
+    animation: animate-boder-right 2s linear infinite;
+    animation-delay: 1s;
+
+}
+
+.AllProDuct_border-bottom.active {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to left, #f17338, #fcc23f);
+    animation: animate-boder-bottom 2s linear infinite;
+}
+
+.AllProDuct_border-left.active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to top, #f17338, #fcc23f);
+    animation: animate-boder-left 2s linear infinite;
+    animation-delay: 1s;
+}
+
+
+@media (max-width:1023px) {
+    .AllProDuct_border-animation {
+        width: 40%;
+    }
+
+    .AllProDuct_hedding {
+        width: 75%;
+    }
+}
+
+@media (max-width:767px) {
+    .AllProDuct .prev-green {
+        position: unset;
+        display: none;
+    }
+
+    .AllProDuct_hedding h2 {
+        font-size: 24px;
+    }
+
+    .AllProDuct_body .swiper {
+        margin: 0 auto;
+        position: unset;
+        transform: unset;
+    }
+}
+
+@media (max-width:390px) {
+    .AllProDuct_body .swiper {
+        width: 20%;
+    }
+    .AllProDuct_border-animation {
+        width: 65%;
+    }
+    .AllProDuct_hedding {
+        flex-direction :column;
+    }
+}

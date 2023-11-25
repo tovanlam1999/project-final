@@ -1,0 +1,100 @@
+.PuppyFood {
+    text-align: center;
+    margin-top: 50px;
+}
+.PuppyFood > .border-animation {
+    width: 30%;
+}
+
+.PuppyFood_wrap {
+    width: 95%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+.PuppyFood_row {
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+
+.PuppyFood_item {
+    position: relative;
+    cursor: pointer;
+}
+.PuppyFood_item::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    background-color: #f79ac533;
+}
+
+.PuppyFood_item:hover .PuppyFood_thumb {
+    opacity: 1;
+    
+    width: 100%;
+    height: 100%;
+}
+
+.PuppyFood_thumb {
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    background-color: #00000063;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    
+    transition: 0.5s;
+    transform: translate(-50%,-50%);
+}
+
+.PuppyFood_thumb i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+@media (max-width:1023px) {
+    .PuppyFood > .border-animation {
+        width: 40%;
+    }
+    .PuppyFood_col {
+        width: 33%;
+    }
+}
+
+
+@media (max-width:768px) {
+    .PuppyFood_col {
+        width: 50%;
+    }
+}
+
+
+@media (max-width:390px) {
+    .PuppyFood > .border-animation {
+        width: 70%;
+    }
+    .PuppyFood h2 {
+        font-size: 40px;
+    }
+    .PuppyFood_col  {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+}

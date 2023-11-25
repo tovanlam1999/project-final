@@ -1,0 +1,70 @@
+.Products_content {
+    padding: 12px;
+}
+.Products_content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: 0.5s;
+}
+.Products_content h3:hover {
+    color: var(--color-primery);
+}
+.Products_content span {
+    display: block;
+    margin: 20px 0;
+    color: var(--color-btn);
+    font-size: 22px;
+    font-weight: 500;
+}
+.review i {   
+    margin-right: 5px;
+    color: #f8a012;
+}
+.Products .thumb {
+    position: relative;
+}
+.Products .thumb:hover .whitlist,
+.Products .thumb:hover .sub-thumb {
+    z-index: 1;
+    opacity: 1;
+}
+.Products .sub-thumb {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+.Products .whitlist {
+    position: absolute;
+    display: flex;
+    bottom: -15px;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%);
+    opacity: 0;
+    transition: 0.5s;
+    gap: 5px;
+}
+.Products .thumb:hover .whitlist {
+    bottom: 15px;
+}
+.Products .whitlist a {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.Products .whitlist a:hover {
+    background-color: var(--color-btn);
+    color: #fff;
+}
+
+@media(max-width:768px) {
+    
+}

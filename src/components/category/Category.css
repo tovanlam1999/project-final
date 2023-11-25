@@ -1,0 +1,146 @@
+p {
+    font-family: sans-serif;
+}
+
+.Category {
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+}
+
+.Category_row {
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 60px;
+    margin: 0 auto 50px;
+    color: var(--color-btn);
+}
+
+.Category_img {
+    width: 20%;
+    margin: 0 auto;
+}
+
+.Category_item {
+    cursor: pointer;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.Category_item h3 {
+    transition: 0.5s;
+}
+
+.Category_item img {
+    transition: 0.5s;
+    border-radius: 50%;
+}
+
+.Category_item:hover img {
+    transform: scale(1);
+}
+
+.Category_item:nth-child(1):hover h3 {
+    color: #fcd848;
+
+}
+
+.Category_item:nth-child(1):hover img {
+    border: 10px inset #fcd848;
+
+}
+
+.Category_item:nth-child(2):hover h3 {
+    color: #37ddee;
+
+}
+
+.Category_item:nth-child(2):hover img {
+    border: 10px inset #37ddee;
+
+}
+
+.Category_item:nth-child(3):hover h3 {
+    color: #f89da3;
+}
+
+.Category_item:nth-child(3):hover img {
+    border: 10px inset #f89da3;
+}
+
+.Category_content {
+    text-align: center;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.Category_content p {
+    margin: 25px 0;
+}
+
+.Category_content button {
+    display: inline-block;
+    width: 60%;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: var(--color-btn);
+    color: #fff;
+    transition: 0.5s;
+    border-radius: 30px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.Category_content button:hover::after {
+    height: 500%;
+
+}
+
+.Category_content button::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-primery);
+    width: 100%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%) translateY(-50%) rotate(-25deg);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+
+@media (max-width:1023px) {
+    .Category_wrap .border-animation {
+        width: 85%;
+    }
+
+
+}
+
+@media (max-width:768px) {
+    .col-4 {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .Category_wrap .border-animation {
+        width: 80%;
+    }
+
+    .Category_h2 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width:390px) {
+    .Category_h2 {
+        font-size: 24px;
+    }
+}

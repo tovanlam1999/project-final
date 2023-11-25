@@ -1,0 +1,45 @@
+.Breadcrumb {
+    text-align: center;
+    padding: 100px 0;
+    background-color: var(--color-primery);
+    position: relative;
+    color: #fff;
+}
+.Breadcrumb::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-image: url(../../img/Breadcrumb-img.jpg);
+    display: block;
+    transform: scaleY(-1);
+}
+.Breadcrumb::after {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 70px;
+    background-image: url(../../img/Breadcrumb-img.jpg);
+    display: block;
+}
+.Breadcrumb div {
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.Breadcrumb h2 {
+    color: #fff;
+}
+.Breadcrumb a {
+    color: #fff !important;
+}
+
+@media (max-width:390px) {
+    .Breadcrumb h2 {
+        font-size: 40px;
+    }
+}

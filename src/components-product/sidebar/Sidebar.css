@@ -1,0 +1,355 @@
+.Sidebar {
+    font-family: var(--font-family);
+}
+
+.Sidebar button {
+    border: 1px solid #e9e9e9;
+    padding: 10px 15px;
+    outline: none;
+    background: #fff;
+    transition: 0.5s;
+    border-radius: 10px;
+    font-family: var(--font-serif);
+}
+
+.Sidebar button:hover {
+    background-color: var(--color-btn);
+    color: #fff;
+}
+
+.Sidebar_left {}
+
+.Sidebar_left-row {}
+
+.Sidebar_left-row h5 {
+    padding: 12px 15px;
+    background-color: var(--color-btn);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.Sidebar_left-list>ul {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.Sidebar_left-list ul {}
+
+.Sidebar_left-list ul>li {
+    margin: 10px 0;
+    transition: 0.5s;
+    font-weight: 400;
+}
+
+.Sidebar_left-list ul>li a:hover {
+    color: var(--color-primery) !important;
+}
+
+.Sidebar_left-list ul>li>a {
+    color: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.Sidebar_left-list ul>li>a .fa-minus {
+    display: none;
+}
+
+.Sidebar_left-list ul>li.active>a .fa-minus {
+    display: block;
+}
+
+.Sidebar_left-list ul>li.active>a .fa-plus {
+    display: none;
+}
+
+.Sidebar_left-list ul>li.active>.Sidebar_left-sublist {
+    opacity: 1;
+    visibility: visible;
+    height: 145px;
+}
+
+.Sidebar_left-sublist {
+    height: 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.Sidebar_left-sublist>li>a {
+    margin-left: 20px;
+    position: relative;
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.Sidebar_left-sublist>li>a::before {
+    position: absolute;
+    left: -15px;
+    content: "\f111";
+    font-family: FontAwesome;
+    transform: translateY(-50%);
+    top: 50%;
+    font-size: 6px;
+}
+
+
+
+.Sidebar_list-button-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.Sidebar_list-button-2 button {
+    margin: 10px 0;
+}
+
+.Sidebar_list-button-3 {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 80%;
+    margin: 20px 0;
+}
+
+.Sidebar_list-button {
+    margin: 20px 0;
+}
+
+
+.Sidebar_card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.Sidebar_thumb {
+    width: 40%;
+    position: relative;
+    cursor: pointer;
+}
+
+.Sidebar_sub-thumb {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.Sidebar_thumb:hover .Sidebar_sub-thumb {
+    opacity: 1;
+    visibility: visible;
+}
+
+.Sidebar_content {
+    width: 55%;
+}
+
+.Sidebar_content h3 {
+    font-size: 18px;
+}
+
+.Sidebar_content span {
+    margin: 10px 0;
+    display: block;
+    color: var(--color-btn);
+}
+
+.Sidebar_list-button .Sidebar_prev {
+    position: unset;
+    width: 40%;
+    margin: 0 auto;
+    transform: unset;
+    cursor: pointer;
+}
+
+
+
+
+.Sidebar_right-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f2f2f2;
+    border: 1px solid #e9e9e9;
+    margin-bottom: 20px;
+}
+
+.Sidebar_header_left {
+    display: flex;
+}
+
+.Sidebar_header_left div {
+    padding: 10px;
+    border: 1px solid #e9e9e9;
+    height: 40px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.Sidebar_header_left div.active {
+    background-color: var(--color-btn);
+}
+
+.Sidebar_header_left div:nth-child(2) i {
+    transition: 0.5s;
+}
+
+.Sidebar_header_left div:nth-child(1):hover,
+.Sidebar_header_left div:nth-child(2) i:hover {
+    color: var(--color-primery);
+}
+
+.Sidebar_header_left div:nth-child(1) {
+    background-color: var(--color-btn);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: 1px solid var(--color-btn);
+
+}
+
+.Sidebar_header_left div:nth-child(2) {
+    background-color: #fff;
+    color: #000;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #fff;
+
+}
+
+.Sidebar_header_left div:nth-child(1) i {
+    line-height: 6px;
+}
+
+.Sidebar_header_mid span,
+.Sidebar_header_right,
+.Sidebar_header_mid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Sidebar_header_right p,
+.Sidebar_header_mid p {
+    margin-bottom: 0;
+}
+
+.Sidebar_header_mid {
+    width: 20%;
+}
+
+.Sidebar_header_mid span {
+    width: 45%;
+    background-color: var(--color-btn);
+    padding: 4px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.Sidebar_header_right:hover,
+.Sidebar_header_mid span:hover {
+    opacity: 0.8;
+}
+
+.Sidebar_header_right {
+    width: 15%;
+    padding: 5px 8px;
+    background-color: var(--color-btn);
+    transition: 0.5s;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.Sidebar_right-body .NewProduct_row {
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+.pagination {
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination li a {
+    color: #000;
+    transition: 0.5s;
+}
+
+.pagination li .page-link:hover {
+    background-color: var(--color-btn);
+    color: #fff;
+}
+
+
+.Sidebar_modal .Sidebar_fixed {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: var(--color-btn);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    z-index: 3;
+    outline: none;
+    border: 1px;
+}
+
+.Sidebar_modal .Sidebar_fixed i  {
+    margin-right: 0px;
+}
+
+
+@media (max-width:768px) {
+    .col-left {
+        display: none;
+    }
+    .col-right {
+        width: 100%;
+    }
+    .Sidebar_modal .Sidebar_fixed {
+        display: flex;
+    }
+    .Sidebar_modal_wrap {
+        height: 100% !important;
+        width: 50%;
+    }
+    .modal-content {
+        height: 100%;
+    }
+}
