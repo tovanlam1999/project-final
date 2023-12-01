@@ -380,8 +380,4 @@ ul {
     .container {
         padding: 0 30px;
     }
-    .modal.show .modal-dialog {
-        width: 100%;
-        height: 50%;
-    }
 }

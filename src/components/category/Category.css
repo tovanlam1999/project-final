@@ -113,7 +113,9 @@ h2 {
     transition: 0.5s;
     z-index: -1;
 }
-
+.Category_wrap .border-animation {
+    width: 55%;
+}
 
 @media (max-width:1023px) {
     .Category_wrap .border-animation {
@@ -130,9 +132,7 @@ h2 {
         margin-top: 30px;
     }
 
-    .Category_wrap .border-animation {
-        width: 80%;
-    }
+   
 
     .Category_h2 {
         font-size: 40px;

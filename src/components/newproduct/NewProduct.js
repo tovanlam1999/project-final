@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 export default function NewProduct(props) {
     const [data, setData] = useState([]);
     const { id } = useParams();
+    const [activeCol, setActiveCol] = useState(0);
     const getData = () => {
         const api = `https://653e66669e8bd3be29df402b.mockapi.io/dog-cat-food/`;
         axios
@@ -24,6 +25,13 @@ export default function NewProduct(props) {
         getData();
     }, []);
 
+    const prevCol = () => {
+        setActiveCol((prevCol) => (prevCol - 1 + data.length) % data.length);
+    };
+
+    const nextCol = () => {
+        setActiveCol((prevCol) => (prevCol + 1) % data.length);
+    };
     return (
         <div className="NewProduct">
             <div className="border-animation active">
@@ -35,15 +43,15 @@ export default function NewProduct(props) {
             </div>
             <div className="NewProduct_bottom">
                 <div className="prev-green">
-                    <div className="prev-left">
+                    <div className="prev-left" onClick={prevCol}>
                         <i class="fa-solid fa-chevron-left"></i>
                     </div>
-                    <div className="prev-right">
+                    <div className="prev-right" onClick={nextCol}>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
                 </div>
-                <Container>
-                    <Row className="NewProduct_row">
+                <Container className="NewProduct_container">
+                    <Row className="NewProduct_row " style={{ transform: `translateX(-${activeCol * 33.3333}%)` }}>
                         {data.map((item, index) => (
                             <Col sm="6" md="4">
                                 <Product product={item} index={index} />

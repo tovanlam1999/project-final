@@ -4,8 +4,8 @@
 }
 
 .navbar_list li a {
-    text-decoration: none !important;
-    color: #000 !important;
+    text-decoration: none ;
+    color: #000 ;
 }
 
 ul {
@@ -53,7 +53,7 @@ ul {
 
 }
 
-.navbar_list li.active {
+.navbar_list li.active a {
     color: var(--color-btn) !important;
 }
 

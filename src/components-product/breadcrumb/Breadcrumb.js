@@ -10,7 +10,6 @@ export default function Breadcrumb(props) {
                 <Link to={`/`}>Home</Link>/
                 <Link> Thức ăn khô</Link>
                 <span>/ {data ? data.title : ''}</span>
-
             </div>
         </div>
     );

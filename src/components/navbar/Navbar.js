@@ -4,9 +4,10 @@ import { Link, useLocation } from 'react-router-dom';
 import ListDetail from '../../pages/Listdetail/ListDetail';
 import { useEffect, useRef, useState } from 'react';
 export default function Navbar(props) {
-    const {data} = props;
+    const { data } = props;
     const [changeColor, setChangeColor] = useState(null);
     const location = useLocation();
+    
     const handle_Click = (index) => {
         setChangeColor(index);
     };
@@ -26,7 +27,7 @@ export default function Navbar(props) {
             case '/':
                 setChangeColor(3);
                 break;
-            case '/':
+            case '/petshop/tin-tuc':
                 setChangeColor(4);
                 break;
             case '/':
@@ -37,7 +38,19 @@ export default function Navbar(props) {
                 setChangeColor(null);
         }
     }, [location.pathname]);
-
+    useEffect(() => {
+        // Thêm class 'active' cho thẻ <a> khi changeColor có giá trị
+        if (changeColor !== null) {
+            const navbarList = document.querySelectorAll('.navbar_list li');
+            navbarList.forEach((item, index) => {
+                if (index === changeColor) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+    }, [changeColor]);
     return (
         <div className="wrap">
             <Container className="navbar_main">
@@ -62,13 +75,6 @@ export default function Navbar(props) {
                     </li>
                 </ul>
             </Container>
-            <div className="Breadcrumb">
-                <h2>{data ? data.headding : 'Tất cả sản phẩm'}</h2>
-                <div>
-                    <Link to={`/`}>Home</Link>/<Link> Thức ăn khô</Link>
-                    <span>/ {data ? data.title : ''}</span>
-                </div>
-            </div>
         </div>
     );
 }

@@ -351,5 +351,6 @@
     }
     .modal-content {
         height: 100%;
+        top: -26%;
     }
 }

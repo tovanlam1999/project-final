@@ -1,8 +1,17 @@
-.baner {
+.banner-wrap {
     margin: 20px auto 30px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    display: flex;
+}
+
+.banner.active {
+    display: block;
+}
+
+.banner {
+    display: none;
 }
 
 .banner-item:last-child {
@@ -67,12 +76,32 @@
     font-family: Cormorant Garamond, serif;
 }
 
+.thumb-banner.two {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 50px;
+    left: 65%;
+}
+
+.thumb-banner.three {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 50px;
+    left: 50%;
+    text-align: center;
+}
+
 .thumb-banner h3 {
     font-size: 30px;
     font-weight: 700;
     color: #181818;
 }
 
+.thumb-banner.two h3 {
+    color: var(--color-primery);
+}
+.thumb-banner.three h3 {
+    color: #1f4350;
+    font-size: 26px;
+}
 .thumb-banner h1 {
     font-size: 60px;
     font-weight: 400;
@@ -80,6 +109,17 @@
     margin: 20px 0;
 }
 
+.thumb-banner.two h1 {
+    color: #000;
+    margin: 30px 0;
+    font-weight: 600;
+}
+.thumb-banner.three h1 {
+    color: #ae3227;
+    font-size: 50px;
+    font-weight: 600;
+
+}
 .thumb-banner p {
     font-size: 18px;
 }
@@ -91,6 +131,9 @@
     line-height: 1.5;
     color: #424242;
 
+}
+.thumb-banner.three p {
+    letter-spacing: 2px;
 }
 
 .thumb-banner button {
@@ -109,7 +152,13 @@
     overflow: hidden;
     z-index: 3;
 }
-
+.thumb-banner.three button {
+    background-color: #27bce4;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
 .thumb-banner button:hover::after {
     height: 270%;
 
@@ -209,6 +258,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .swiper span {
     width: 10px;
     height: 10px;
@@ -217,15 +267,18 @@
     padding: 5px;
     border: 1px solid #000;
 }
+
 .swiper span:nth-child(1) {
     background-color: var(--color-primery);
 }
+
 .swiper span:nth-child(2) {
     background-color: var(--color-btn);
 }
+
 .swiper span:nth-child(3) {
     background-color: var(--color-btn);
-    
+
 }
 
 @media (min-width:1024px) {
@@ -251,22 +304,27 @@
     .thumb-banner button {
         width: 40%;
     }
-     .modal.show .modal-dialog {
+
+    .modal.show .modal-dialog {
         height: 100%;
     }
-    
+
 }
 
 @media (max-width:768px) {
     .swiper {
         display: flex;
     }
+
     .modal.show .modal-dialog {
         height: 50%;
+        width: 100%;
     }
+
     .modal-dialog {
         max-width: none;
     }
+
     .prev {
         display: none;
     }
@@ -304,25 +362,26 @@
 }
 
 @media (max-width:390px) {
+
     .banner-2,
     .banner-3,
-    .banner-1{
+    .banner-1 {
         height: 400px;
     }
-    .thumb-banner h3 {
-        font-size: 10px;
-    }
+
     .thumb-banner h1 {
         font-size: 24px;
     }
+
     .thumb-banner button {
         width: 50%;
     }
+
     .swiper {
 
         width: 20%;
         bottom: 10%;
-}
+    }
 }
 
 @keyframes moveleft {

@@ -32,10 +32,12 @@ h2 {
     cursor: pointer;
     margin-top: 50px;
 }
-
+.NewProduct_container {
+    overflow: hidden;
+}
 .NewProduct_row {
     flex-wrap: unset;
-    overflow: hidden;
+
     text-align:center;
 }
 .NewProduct .prev-green  {

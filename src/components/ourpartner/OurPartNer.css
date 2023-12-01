@@ -15,9 +15,15 @@
 }
 .OurPartNer_row {
     margin-top: 50px;
+    flex-wrap: nowrap;
 }
+.OurPartNer_container {
+    overflow: hidden;
+}
+.image-container {
+    display: flex;
 
-
+}
 
 @media (max-width:1023px) {
 

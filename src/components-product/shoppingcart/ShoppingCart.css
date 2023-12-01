@@ -1,0 +1,47 @@
+.ShoppingCart {
+    margin: 30px 0;
+}
+
+
+
+.ShoppingCart_right.active {
+    display: none;
+}
+
+
+.ShoppingCart_item {
+    display: none;
+}
+.ShoppingCart_item i {
+    font-size: 70px;
+}
+.ShoppingCart_item.active {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+    text-align: center;
+}
+.ShoppingCart_item button {
+    padding: 12px ;
+    background-color: var(--color-btn);
+    color: #fff;
+    border-radius: 30px;
+    width: 70%;
+    transition: 0.5s;
+}
+
+.ShoppingCart_item button:hover {
+    background-color: var(--color-primery);    
+} 
+
+
+
+.ShoppingCart_item-content {
+    margin: 20px 0;
+}
+.ShoppingCart_item-content h4 {
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 30px 0;
+}

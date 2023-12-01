@@ -184,7 +184,7 @@
 
 .OurUpDation .border-animation {
     margin: 50px auto;
-    width: 35%;
+    width: 40%;
 }
 
 .OurUpDation_h2 {
@@ -242,6 +242,9 @@
 }
 
 @media (max-width:390px) {
+    .OurUpDation_left button  {
+        width: 40%;
+    }
     .OurUpDation .border-animation {
         width: 75%;
     }

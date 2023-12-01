@@ -220,6 +220,7 @@ h6 {
 .Modal_card {
     float: right;
     max-width: 25%;
+    transform: translateX(325px);
 }
 
 .Modal_card-row {
@@ -250,8 +251,9 @@ h6 {
 }
 
 .Modal_card .modal-body {
-    padding: 20px;
+    padding: 0  20px;
     border-bottom: none;
+    overflow: hidden;
 }
 
 .Modal_card .modal-content {
@@ -305,23 +307,53 @@ h6 {
     background-color: var(--color-primery);
 }
 
+.Modal_body-content {
+    margin-top: 20px;
 
+}
+.Modal_body-content h4 {
+    font-size: 16px;
+    font-family: var(--font-family);
+}
+
+.Modal_body-content a button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-btn);
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.5s;
+}
+.Modal_body-content a button:hover {
+    background-color: var(--color-primery);
+}
+
+.Modal_footer.active,
 .price-cost {
     display: none;
 }
-.Modal_total {
+
+.Modal_footer .Modal_total {
     border-bottom: 1px solid #e9e9e9;
-    display: flex;
+    border-top: 1px solid #e9e9e9;
+    display: flex;  
     justify-content: space-between;
     align-items: center;
     font-family: var(--font-serif);
-}
-.Modal_total p {
-    margin: 0;
-    padding: 20px 0;
-    font-size: 20px;
+    padding:  20px;
     font-weight: 600;
     color: #666666;
+    width: 100%;
+}
+.Modal_footer p {
+    margin: 0;
+    padding: 10px 20px ;
+    font-size: 16px;
+    
 }
 .Modal_footer {
     border-top: none;

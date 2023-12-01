@@ -95,12 +95,18 @@
     transform: scale(1.1);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
+@media (min-width:1024px) {
+    .BannerLogin_img {
+        top: 150px;
+    }
+    
+}
 
 @media (max-width:1023px) {
     .BannerLogin_img {
         display: none;
     }
+    
 }
 @media (max-width:767px) {
     .BannerLogin_content  {

@@ -16,7 +16,7 @@ export default function Category() {
                     <span className="border-bottom"></span>
                     <span className="border-left"></span>
                 </div>
-                <Container>
+                
                 <Row className='Category_row' >
                     <Col className="Category_item col-4">
                         <img src={Categorydog} />
@@ -53,7 +53,7 @@ export default function Category() {
                     </Col>
                 </Row>
 
-                </Container>
+              
             </div>
         </div>
     );

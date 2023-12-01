@@ -110,13 +110,21 @@
 
 .Trainers_content p {}
 
-.Trainers_bottom {
+.Trainers_bottom  {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
 }
-
+.Trainers_content-item-wrap {
+    display: flex;
+}
+.Trainers_content-item.active {
+    display: block;
+}
+.Trainers_content-item {
+    display: none;
+}
 .Trainers_img {}
 
 .Trainers_desc {}

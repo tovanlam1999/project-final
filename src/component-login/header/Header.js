@@ -1,4 +1,4 @@
-import img from '../../img/logo_.jpg';
+import img from "../../img/logo_.jpg"
 import { Nav, Navbar, NavItem, NavLink, Collapse, NavbarText, NavbarBrand, NavbarToggler } from 'reactstrap';
 import './Header.css';
 
@@ -22,20 +22,7 @@ export default function Header(args, props) {
                         <img src={img} />
                     </NavbarBrand>
 
-                    <Collapse navbar className="collapse_nav">
-                        <Nav className="header-sreach">
-                            <input
-                                type="text"
-                                placeholder="Tìm kiếm sản phẩm..."
-                                value={value}
-                                onChange={(e) => setvalue(e.target.value)}
-                            />
-
-                            <div>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
-                        </Nav>
-                    </Collapse>
+                    
                     <NavbarText className="header_right navbar">
                         <div className="sreach">
                             <i class="fa-solid fa-magnifying-glass"></i>

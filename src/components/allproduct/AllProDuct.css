@@ -21,10 +21,12 @@
 .AllProDuct_border-animation>.active {
     color: var(--color-btn);
 }
+.AllProDuct_body-container {
+    overflow: hidden;
 
+}
 .AllProDuct_row {
     flex-wrap: unset;
-    overflow: hidden;
     margin-top: 50px;
 }
 

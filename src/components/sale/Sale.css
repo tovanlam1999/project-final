@@ -17,8 +17,14 @@
     justify-content: space-between;
 }
 
-.Sale_left {}
-
+.Sale_left .border-animation {
+    width: 70%;
+    margin: 0;
+}
+.Sale_h2 {
+    font-size: 45px;
+    text-align: center;
+}
 .Sale_content {
     margin-top: 50px;
     width: 100%;
@@ -64,7 +70,7 @@
 
 .Sale_button button {
     display: inline-block;
-    width: 35%;
+    width: 40%;
     padding: 14px 12px;
     margin-right: 30px;
     border: none;

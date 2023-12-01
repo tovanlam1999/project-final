@@ -1,3 +1,13 @@
+.BlogBody {
+    
+}
+
+
+
+
+
+
+
 .BlogBody_navbar h3 {}
 
 .BlogBody_navbar-item {
@@ -47,7 +57,7 @@
 
 .BlogBody_navbar-item .BlogBody_categories li {
     background-color: var(--color-btn);
-    color: #000;
+    color: #fff;
     border-bottom: 1px dashed #fff;
     padding: 12px 20px;
     font-size: 18px;

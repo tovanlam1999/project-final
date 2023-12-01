@@ -7,7 +7,13 @@ export default function Sale() {
         <div className="Sale_wrap container">
             <Row className="Sale">
                 <Col className=" col-6 Sale_left">
-                    <h2>Ưu đãi hôm nay</h2>
+                <div className="border-animation active">
+                    <h2 className='Sale_h2'>Ưu đãi hôm nay</h2>
+                    <span className="border-top"></span>
+                    <span className="border-right"></span>
+                    <span className="border-bottom"></span>
+                    <span className="border-left"></span>
+                </div>
                     <div className="Sale_content">
                         <h3>Que nhai mềm</h3>
                         <div className="review">

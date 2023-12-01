@@ -1,0 +1,102 @@
+.Account {
+    margin: 50px auto 0;
+    width: 40%;
+    text-align: center;
+    background: #f7f7f7;
+}
+
+.Account_headding {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 20px auto;
+}
+
+.Account_headding button {
+    padding: 12px;
+    font-size: 26px;
+    font-weight: 600;
+    background: #f7f7f7;
+}
+
+
+.Account_headding button.active {
+    border-bottom: 2px solid var(--color-btn);
+    color: var(--color-btn);
+}
+
+.Account_headding button {
+    color: #c1bebe;
+    border-bottom: 2px solid #c1bebe;
+}
+
+.Account_body {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.Account_body div h6{
+    display: flex;
+}
+.Account_body input {
+    width: 100%;
+    border: 1px solid #c1bebe;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin: 5px 0 15px;
+    color: #000;
+    opacity: 1;
+}
+
+
+.Account_body button {
+    padding: 12px 20px;
+    background: var(--color-btn);
+    border-radius: 30px;
+    color: #fff;
+    
+}
+
+.Account input::placeholder {
+    color: #aaaa;
+}
+.Account_link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.Account_link a {
+    display: block;
+    margin: 20px 0;
+    text-decoration: none;
+    color: #000;
+    transition: 0.5s;
+}
+
+.Account_link a:hover {
+    color: var(--color-primery);
+}
+
+.input_password {
+    position: relative;
+}
+.input_password i {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(-50%);
+    cursor: pointer;
+}
+.input_password i:last-child {
+    display: none;
+}
+.Account_button-footer  button:nth-child(2){
+    display: none;
+}
+.Account_button-footer  button.active {
+    display: inline-block;
+}

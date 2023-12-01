@@ -8,14 +8,19 @@ import img3 from '../../img/detail-img-3.jpg';
 import img4 from '../../img/detail-img-4.jpg';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import AddCard from '../addcard/AddCard';
+import axios from 'axios';
+import { Link, useParams } from 'react-router-dom';
 export default function ListProduct(props, args) {
     const { data } = props;
     const [value, setValue] = useState(1);
     const [modal, setModal] = useState(false);
-    const { listCard, setListCard } = useState([]);
+    const [listCard, setListCard] = useState([]);
+    const [cart, setCart] = useState([]);
+    const [showEmptyCart, setShowEmptyCart] = useState(false);
+    //click thêm sản phẩm vào giỏ hàng
     const toggle = () => {
-        console.log('Toggle function is called');
         setModal(!modal);
+        localStorage.setItem('cart', JSON.stringify(data));
     };
     const handleButtonClick = (groupIndex, buttonIndex) => {
         // Lấy tất cả các button trong các nhóm và lặp qua từng button
@@ -46,25 +51,88 @@ export default function ListProduct(props, args) {
         }
     };
 
-    const calcTotal = (row) => {
-        const price = parseFloat(row.price);
-        const quantity = parseInt(row.value, 10);
-
-        if (!isNaN(price) && !isNaN(quantity)) {
-            return price * quantity;
+    async function getListCard() {
+        try {
+            const res = await axios.get('https://653e66669e8bd3be29df402b.mockapi.io/dog-cat-food/');
+            setListCard(res.data);
+        } catch (error) {
+            console.log(error);
         }
+    }
 
-        return 0;
+    useEffect(() => {
+        getListCard();
+        if (localStorage.getItem('cart')) {
+            setCart(JSON.parse(localStorage.getItem('cart')));
+        }
+    }, []);
+
+    useEffect(() => {
+        getListCard();
+        // Lấy dữ liệu từ localStorage
+        const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+        console.log('Stored Cart:', storedCart);
+        setCart(storedCart);
+    }, []);
+
+    const handle_delete = (id) => {
+        const updatedCart = cart.filter((item) => item.id !== id);
+        setCart(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        // Kiểm tra nếu cart trống, cập nhật showEmptyCart
+        if (updatedCart.length === 0) {
+            setShowEmptyCart(true);
+        }
     };
-    const calcAllTotal = () => {
-        let total = 0;
 
-        listCard.forEach((row) => {
-            total += calcTotal(row);
-        });
-
-        return total;
+    const handle_add = (id) => {
+        setModal(!modal);
+    
+        // Tìm sản phẩm trong danh sách (listCard) dựa trên id
+        const item = listCard.find((item) => item.id == id);
+    
+        // Kiểm tra xem cart có phải là mảng không
+        if (!Array.isArray(cart)) {
+            setCart([{ ...item, qty: 1 }]);
+            localStorage.setItem('cart', JSON.stringify([{ ...item, qty: 1 }]));
+            return;
+        }
+    
+        // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng hay chưa
+        const index = cart.findIndex((item) => item.id == id);
+    
+        if (index >= 0) {
+            // Nếu sản phẩm đã tồn tại trong giỏ hàng, tăng số lượng
+            const newCart = [...cart];
+            newCart[index]['qty']++;
+            setCart(newCart);
+        } else {
+            // Nếu sản phẩm chưa có trong giỏ hàng, thêm vào giỏ hàng với số lượng là 1
+            setCart([...cart, { ...item, qty: 1 }]);
+        }
+        localStorage.setItem('cart', JSON.stringify([...cart, { ...item, qty: 1 }]));
     };
+
+    const calculateTotalPrice = () => {
+        if (!Array.isArray(cart)) {
+            return 0; // hoặc giá trị mặc định khác tùy thuộc vào yêu cầu của bạn
+        }
+        // Tính tổng giá trị của tất cả các phần tử trong mảng cart
+        const total = cart.reduce((acc, item) => {
+            // Chuyển đổi giá trị thành số và nhân với số lượng
+            const priceAsNumber = parseFloat(item.price.replace(',', ''));
+            const itemTotal = priceAsNumber * item.qty;
+
+            // Cộng vào tổng
+            return acc + itemTotal;
+        }, 0);
+       
+        // Định dạng số với dấu phẩy ngăn cách
+        const formattedTotal = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total);
+
+        return formattedTotal;
+    };
+
     return (
         <div className="ListProduct">
             <Container>
@@ -161,7 +229,8 @@ export default function ListProduct(props, args) {
                             <div className="ListProduct_content-bottom">
                                 <div className="ListProduct_content-bottom-item">
                                     <div className="btn_card ">
-                                        <button onClick={toggle}>Thêm vào giỏ hàng</button>
+                                        <button onClick={() => handle_add(data && data.id)}>Thêm vào giỏ hàng</button>
+
                                         <button>Mua nó ngay</button>
                                     </div>
                                     <button className="btn_w100">Thêm vào danh sách yêu thích</button>
@@ -306,10 +375,25 @@ export default function ListProduct(props, args) {
                     <button onClick={toggle}>X</button>
                 </ModalHeader>
                 <ModalBody>
-                    <AddCard/>
+                    {cart.length > 0 ? (
+                        cart.map((item) => <AddCard handle_delete={handle_delete} data={item} />)
+                    ) : (
+                        <div className="Modal_body-content">
+                            <h4>Giỏ hàng của bạn hiện đang trống.</h4>
+                            <Link to={`/petshop/tat-ca-san-pham`}>
+                                <button>Tiếp tục mua sắm</button>
+                            </Link>
+                        </div>
+                    )}
                 </ModalBody>
 
-                <ModalFooter className="Modal_footer">
+                <ModalFooter className={`Modal_footer ${showEmptyCart ? 'active' : ''}`}>
+                    <div className="Modal_total">
+                        <span>Tổng Cộng</span>
+                        <span className="money">{calculateTotalPrice()}</span>
+                    </div>
+                    <p>Vận chuyển, thuế và giảm giá sẽ được tính khi thanh toán.</p>
+
                     <Button onClick={toggle}>Thanh toán</Button>
                     <Button onClick={toggle}>Xem giỏ hàng</Button>
                 </ModalFooter>
