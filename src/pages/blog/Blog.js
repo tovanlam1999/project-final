@@ -2,10 +2,10 @@ import axios from 'axios';
 import BlogBody from '../../component-blog/blogbody/BlogBody';
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
-import Navbar from '../../components/navbar/Navbar';
+import Navbar from "../../components-product/navbar/Navbar";
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Breadcrumb from '../../components-product/breadcrumb/Breadcrumb';
+
 
 export default function Blog() {
     const [animal, setAnimal] = useState();
@@ -32,7 +32,7 @@ export default function Blog() {
         <div className="Blog">
             <Header />
             <Navbar />
-            <Breadcrumb/>
+            
             <BlogBody animal = {animal} />
             <Footer />
         </div>

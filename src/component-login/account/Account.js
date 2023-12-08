@@ -11,8 +11,8 @@ export default function Account() {
     const [activeButton, setActiveButton] = useState('login');
     const [showLoginButton, setShowLoginButton] = useState(true);
     const [showRegisterButton, setShowRegisterButton] = useState(true);
-    const [activeRegister,setActiveRegister] = useState(true)
-
+    const [activeRegister, setActiveRegister] = useState(true);
+    const [isResetPasswordActive, setResetPasswordActive] = useState(true);
     const handleLogin = () => {
         // Thực hiện kiểm tra đơn giản, ví dụ: nếu username và password đều là "admin"
         if (useEmail === 'admin' && password === 'admin') {
@@ -55,6 +55,34 @@ export default function Account() {
             setShowRegisterButton(true);
         }
     };
+    const handleResetPassword = () => {
+        const result = document.querySelectorAll('.Account-login');
+
+        // Lặp qua mỗi phần tử .Account-login và áp dụng logic
+        result.forEach((element, index) => {
+            if (index === 0) {
+                // Thêm class "active" cho phần tử đầu tiên
+                element.classList.add('active');
+            } else {
+                // Xóa class "active" cho các phần tử khác
+                element.classList.remove('active');
+            }
+        });
+    };
+    const handleReturnLogin = () => {
+        const result = document.querySelectorAll('.Account-login');
+
+        // Lặp qua mỗi phần tử .Account-login và áp dụng logic
+        result.forEach((element, index) => {
+            if (index === 0) {
+                // Xóa class "active" cho phần tử đầu tiên
+                element.classList.remove('active');
+            } else if (index === 1) {
+                // Thêm class "active" cho phần tử thứ hai
+                element.classList.add('active');
+            }
+        });
+    };
 
     // Hiển thị nội dung khác nhau dựa trên trạng thái đăng nhập
     useEffect(() => {
@@ -62,85 +90,117 @@ export default function Account() {
             console.log('Đăng nhập thành công!');
             // Thực hiện các hành động sau khi đăng nhập thành công, ví dụ: chuyển hướng trang
         }
+        setActiveRegister(false);
     }, [isLoggedIn]);
 
     return (
         <div className="Account">
-            <div className="Account_headding">
-                <button onClick={() => handleButtonClick('login')} className={activeButton === 'login' ? 'active' : ''}>
-                    Đăng nhập
-                </button>
-                <button
-                    onClick={() => {handleButtonClick('register')}}
-                    className={activeButton === 'register' ? 'active' : ''}
-                >
-                    Đăng ký
-                </button>
-            </div>
-            <div className="Account_body">
-                <div>
-                    <h6>Email hoặc số điện thoại</h6>
-                    <input
-                        type="email"
-                        placeholder="E-mail hoặc số điện thoại"
-                        name="email"
-                        autoFocus
-                        autoCorrect="off"
-                        id="email"
-                        required
-                        value={useEmail}
-                        onChange={(e) => setUseEmail(e.target.value)}
-                    />
+            <div className="Account-login">
+                <div className="Account_headding">
+                    <button
+                        onClick={() => handleButtonClick('login')}
+                        className={activeButton === 'login' ? 'active' : ''}
+                    >
+                        Đăng nhập
+                    </button>
+                    <button
+                        onClick={() => {
+                            handleButtonClick('register');
+                        }}
+                        className={activeButton === 'register' ? 'active' : ''}
+                    >
+                        Đăng ký
+                    </button>
                 </div>
-
-                <div className="input_password">
-                    <h6>Mật khẩu</h6>
-                    <div className="">
+                <div className="Account_body">
+                    <div>
+                        <h6>Email hoặc số điện thoại</h6>
                         <input
-                            type="password"
-                            placeholder="Mật khẩu"
-                            name="password"
+                            type="email"
+                            placeholder="E-mail hoặc số điện thoại"
+                            name="email"
                             autoFocus
                             autoCorrect="off"
-                            id="password"
-                            value={password}
-                            onChange={(e) => setPassWord(e.target.value)}
+                            id="email"
+                            required
+                            value={useEmail}
+                            onChange={(e) => setUseEmail(e.target.value)}
                         />
-                        <i className="fa-regular fa-eye"></i>
-                        <i className="fa-regular fa-eye-slash"></i>
                     </div>
-                </div>
-                {showRegister && (
+
                     <div className="input_password">
-                        <h6>Nhập lại mật khẩu</h6>
-                        <div>
+                        <h6>Mật khẩu</h6>
+                        <div className="">
                             <input
                                 type="password"
-                                placeholder="Nhập lại mật khẩu"
+                                placeholder="Mật khẩu"
                                 name="password"
                                 autoFocus
                                 autoCorrect="off"
                                 id="password"
-                                value={rePassword}
-                                onChange={(e) => setRePassword(e.target.value)}
+                                value={password}
+                                onChange={(e) => setPassWord(e.target.value)}
                             />
                             <i className="fa-regular fa-eye"></i>
                             <i className="fa-regular fa-eye-slash"></i>
                         </div>
                     </div>
-                )}
-                <div className="Account_button-footer">
-                    {showLoginButton && <button onClick={handleLogin}>Đăng Nhập</button>}
-                    {showRegisterButton && 
-                    
-                    <button onClick={handleRegister}
-                    className={activeRegister ? "active" : ""}
-                    >Đăng Ký</button>}
+
+                    {showRegister && (
+                        <div className="input_password">
+                            <h6>Nhập lại mật khẩu</h6>
+                            <div>
+                                <input
+                                    type="password"
+                                    placeholder="Nhập lại mật khẩu"
+                                    name="password"
+                                    autoFocus
+                                    autoCorrect="off"
+                                    id="password"
+                                    value={rePassword}
+                                    onChange={(e) => setRePassword(e.target.value)}
+                                />
+                                <i className="fa-regular fa-eye"></i>
+                                <i className="fa-regular fa-eye-slash"></i>
+                            </div>
+                        </div>
+                    )}
+                    <div className="Account_button-footer">
+                        {showLoginButton && <button onClick={handleLogin}>Đăng Nhập</button>}
+                        {showRegisterButton && (
+                            <button onClick={handleRegister} className={activeRegister ? 'active' : ''}>
+                                Đăng Ký
+                            </button>
+                        )}
+                    </div>
+                    <div className="Account_link">
+                        <Link onClick={handleResetPassword}>Quên mật khẩu</Link>
+                        <Link to={`/`}>Quay lại cửa hàng</Link>
+                    </div>
                 </div>
             </div>
-            <div className="Account_link">
-                <Link>Quên mật khẩu</Link>
-                <Link to={`/`}>Quay lại cửa hàng</Link>
+            <div className="Account_body Account-login active">
+                <div>
+                    <h3>Đặt lại mật khẩu của bạn</h3>
+                    <p>Chúng tôi sẽ gửi cho bạn một email để đặt lại mật khẩu của bạn.</p>
+                </div>
+                <input
+                    type="email"
+                    placeholder="E-mail hoặc số điện thoại"
+                    name="email"
+                    autoFocus
+                    autoCorrect="off"
+                    id="email"
+                    required
+                    value={useEmail}
+                    onChange={(e) => setUseEmail(e.target.value)}
+                />
+                <div className="Account_link">
+                    <button>Gửi</button>
+                    <Link  onClick={handleReturnLogin}>
+                        Quay lại đăng nhập
+                    </Link>
+                </div>
             </div>
         </div>
     );

@@ -1,0 +1,139 @@
+.BookYourSlot {
+    margin-bottom: 100px;
+}
+
+
+
+
+.BookYourSlot_left {
+    display: flex;
+    position: relative;
+}
+
+.BookYourSlot-img {
+    width: 80%;
+}
+
+.BookYourSlot-img img {
+    border-radius: 30px;
+}
+
+
+.BookYourSlot_info {
+    position: absolute;
+    top: 5%;
+    right: -5%;
+    width: 60%;
+    background-color: #FFE9ED;
+    padding: 30px;
+    border-radius: 30px;
+
+}
+
+.BookYourSlot_info h3 {
+    font-weight: 800;
+    font-size: 30px;
+}
+
+.BookYourSlot_list-address {
+    margin-top: 30px;
+}
+
+.BookYourSlot_list-item {
+    margin-top: 30px;
+}
+
+.BookYourSlot_list-item input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 20px 0;
+    border-bottom: 1px solid #d9b6bc;
+    transition: 0.5s;
+}
+
+.BookYourSlot_list-item input::placeholder {
+    color: #73696b;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.BookYourSlot_list-item input:focus {
+    border-bottom: 1px solid var(--color-btn);
+}
+
+.BookYourSlot_list-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.BookYourSlot_info button {
+    padding: 12px;
+    width: 40%;
+    background-color: var(--color-btn);
+    color: #fff;
+    transition: 0.5s;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 30px;
+
+}
+
+.BookYourSlot_info button:hover {
+    background-color: var(--color-primery);
+}
+
+
+
+
+.BookYourSlot_right {
+    margin-left: 50px;
+}
+
+.BookYourSlot_right-content h3  {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 70px;
+}
+.BookYourSlot_right-content p {
+    margin: 30px 0;
+    font-size:16px;
+    font-weight: 600;
+}
+.BookYourSlot_right-address {}
+
+.BookYourSlot_address-item {
+    display: flex;
+    width: 70%;
+    margin-top: 20px;
+}
+
+.BookYourSlot_icon {
+    min-width: 50px;
+}
+.BookYourSlot_icon i {
+    font-size: 30px;
+}
+
+.BookYourSlot_desc h6 {
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--color-black);
+}
+.BookYourSlot_desc p {
+    font-weight: 600;
+}
+
+.BookYourSlot_desc a {
+    display: block;
+    font-weight: 600;
+    font-size: 18px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.BookYourSlot_desc a:hover {
+    color: var(--color-primery) !important;
+}

@@ -244,6 +244,7 @@
 @media (max-width:390px) {
     .OurUpDation_left button  {
         width: 40%;
+        margin-top: 20px;
     }
     .OurUpDation .border-animation {
         width: 75%;

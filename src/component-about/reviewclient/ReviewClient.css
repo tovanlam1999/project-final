@@ -1,0 +1,195 @@
+p {
+    margin: 0;
+}
+
+.ReviewClient-wrap {
+    margin: 200px 0 100px;
+    position: relative;
+}
+
+.ReviewClient_container {
+    background-color: #ffc312;
+    border-radius: 30px;
+    padding: 50px;
+    background-image: url(../../img/background-wrap.jpg);
+
+}
+
+.ReviewClient {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.ReviewClient-item {
+    width: 50%;
+    display: flex;
+    padding: 30px;
+    align-items: center;
+}
+
+.ReviewClient-icon {
+    min-width: 90px;
+}
+
+.ReviewClient-icon i {
+    font-size: 50px;
+}
+
+.ReviewClient-desc span {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.ReviewClient-desc p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+.ReviewClient_col {
+    display: flex;
+    align-items: end;
+}
+
+.ReviewClient_bottom-right {
+    margin-bottom: 30px;
+}
+
+.ReviewClient_bottom-right p {
+    font-size: 40px;
+    font-weight: 800;
+    padding-bottom: 60px;
+}
+
+.ReviewClient_bottom-right button {
+    width: 50%;
+    padding: 12px 20px;
+    background-color: var(--color-btn);
+    color: #fff;
+    font-weight: 800;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.ReviewClient_bottom-right button:hover {
+    background-color: var(--color-primery);
+}
+
+
+.ReviewClient-animation-1 {
+    position: absolute;
+    top: -25%;
+    left: 15%;
+    animation: movedogleft 5s infinite alternate linear;
+}
+
+.ReviewClient-animation-2 {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+
+    animation: movetopbottom 5s infinite alternate linear;
+}
+
+.ReviewClient-animation-3 {
+    position: absolute;
+    top: -25%;
+    width: 12%;
+    left: 65%;
+    animation: movedogright 5s infinite alternate linear;
+
+
+}
+
+@keyframes movedogleft {
+    from {
+        left: 10%;
+    }
+
+    to {
+        left: 20%;
+    }
+
+}
+
+@keyframes movedogright {
+    from {
+        left: 65%;
+    }
+
+    to {
+        left: 80%;
+    }
+
+}
+
+@keyframes movetopbottom {
+    from {
+        top: -15%;
+    }
+
+    to {
+        top: 5%;
+    }
+}
+
+
+@media (max-width:768px) {
+    .ReviewClient_col {
+        width: 100%;
+    }
+
+    .ReviewClient_row {
+        flex-direction: column-reverse;
+    }
+
+
+
+    .ReviewClient-animation-1 {
+        top: -10%;
+        left: 15%;
+        width: 20%;
+        animation: unset;
+    }
+
+    .ReviewClient-animation-2 {
+        width: 15%;
+        animation: unset;
+        top: -10%;
+        left: 65%;
+    }
+
+    .ReviewClient-animation-3 {
+        display: none;
+    }
+}
+
+
+@media (max-width:390px) {
+    .ReviewClient_bottom-right p {
+        font-size: 30px;
+    }
+
+    .ReviewClient_bottom-right button {
+        width: 100%;
+    }
+
+    .ReviewClient-item {
+        width: 100%;
+        padding: 30px 0;
+    }
+
+    .ReviewClient-animation-1 {
+        top: -5%;
+        left: 8%;
+        width: 30%;
+    }
+
+    .ReviewClient-animation-2 {
+        width: 20%;
+        top: -2%;
+        left: 70%;
+    }
+}

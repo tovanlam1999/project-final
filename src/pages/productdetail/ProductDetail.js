@@ -1,7 +1,7 @@
 import Header from '../../components/header/Header';
-import Navbar from '../../components/navbar/Navbar';
+import Navbar from "../../components-product/navbar/Navbar";
 import Footer from '../../components/footer/Footer';
-import Breadcrumb from '../../components-product/breadcrumb/Breadcrumb';
+
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -36,7 +36,7 @@ export default function ProductDetail(props) {
         <div className="ProductDetail">
             <Header data={data} />
             <Navbar data={data} />
-            <Breadcrumb/>
+            
             <ListProduct  data={data} />
             <NewProducts />
             <Footer />

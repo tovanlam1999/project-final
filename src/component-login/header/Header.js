@@ -1,4 +1,4 @@
-import img from "../../img/logo_.jpg"
+import img from "../../img/Logo-img-1.png"
 import { Nav, Navbar, NavItem, NavLink, Collapse, NavbarText, NavbarBrand, NavbarToggler } from 'reactstrap';
 import './Header.css';
 

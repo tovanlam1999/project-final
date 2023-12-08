@@ -18,7 +18,7 @@ export default function PuppyFood() {
                     <span className="border-bottom"></span>
                     <span className="border-left"></span>
                 </div>
-            <div className="PuppyFood_wrap">
+            <div className="PuppyFood_wrap container">
                 <Row sm="6" md="5" className='PuppyFood_row'>
                     <Col className='PuppyFood_col'>
                         <div className="PuppyFood_item">

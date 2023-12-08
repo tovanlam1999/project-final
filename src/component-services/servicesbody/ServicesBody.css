@@ -1,0 +1,329 @@
+.ServicesBody {
+    margin-top: 50px;
+}
+
+.ServicesBody_top {
+    margin-bottom: 200px;
+}
+
+.ServicesBody_top-thumb {
+    position: relative;
+    margin-right: 30px;
+}
+
+.ServicesBody_top-thumb img {
+    border-radius: 30px;
+}
+
+.ServicesBody_top-img {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    width: 90%;
+}
+
+.ServicesBody_top-animation {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    background-color: rgb(17, 17, 39);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.ServicesBody_top-animation::after {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    content: "";
+    border: 5px outset var(--color-btn);
+    border-radius: 50%;
+    animation: rotateLeft 5s infinite forwards linear;
+
+}
+
+.ServicesBody_top-animation::before {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    content: "";
+    border: 5px inset var(--color-primery);
+    border-radius: 50%;
+    animation: rotateRight 5s infinite forwards linear;
+
+}
+
+.ServicesBody_top-animation-one {
+    background-color: rgb(17, 17, 39);
+    color: #fff;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: rotate(-25deg);
+}
+
+.ServicesBody_top-animation div span {
+    font-size: 30px;
+    font-weight: 800;
+
+}
+
+.ServicesBody_top-animation div p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.ServicesBody_top-content h3 {
+    font-weight: bold;
+    font-size: 40px;
+    margin: 50px 0;
+}
+
+.ServicesBody_top-content-headding {
+    margin: 20px 0;
+}
+
+.ServicesBody_top-content-headding h6 {
+    color: rgb(21, 21, 49);
+}
+
+.ServicesBody_top-content-headding p {
+    font-weight: 600;
+}
+
+.ServicesBody_top-content-open {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.ServicesBody_top-content-open h4 {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.ServicesBody_top-content-open span {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.ServicesBody_top-content button {
+    margin-top: 50px;
+    display: inline-block;
+    padding: 12px;
+    background-color: var(--color-btn);
+    color: #fff;
+    width: 30%;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.ServicesBody_top-content button:hover {
+    background-color: var(--color-primery);
+}
+
+.ServicesBody_open-door:nth-child(1) {
+    border-right: 1px solid #ccc;
+    padding-right: 15px;
+}
+
+.ServicesBody_open-door:nth-child(2) {
+    padding-left: 15px;
+}
+
+.ServicesBody_bottom-col {
+    padding: 30px;
+}
+
+.ServicesBody_bottom-item {
+    padding: 50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 30px;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+.ServicesBody_bottom-item-thumb {
+    position: relative;
+}
+
+.ServicesBody_bottom-img {}
+
+.ServicesBody_bottom-img img {
+    border-radius: 30px;
+}
+
+.ServicesBody_bottom-item:hover .ServicesBody_bottom-subimg {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ServicesBody_bottom-desc {
+    position: relative;
+}
+
+.ServicesBody_bottom-desc h3 {
+    margin: 20px 0;
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.ServicesBody_bottom-desc h3:hover {
+    color: var(--color-btn);
+}
+
+.ServicesBody_bottom-desc p {
+    position: relative;
+    bottom: 0px;
+    height: 0px;
+    opacity: 0;
+    transition: 0.5s;
+    margin: 0;
+    display: flex;
+    align-items: end;
+    font-weight: 600;
+}
+
+.ServicesBody_bottom-item:hover p {
+    height: 60px;
+    opacity: 1;
+}
+
+.ServicesBody_bottom-subimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000075;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    border-radius: 30px;
+}
+
+.ServicesBody_bottom-subimg button {
+    padding: 12px 20px;
+    background-color: var(--color-btn);
+    color: #fff;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.ServicesBody_bottom-subimg button:hover {
+    background-color: var(--color-primery);
+}
+
+
+@keyframes rotateLeft {
+    to {
+        transform: rotate(0deg);
+    }
+
+    from {
+        transform: rotate(360deg);
+
+    }
+}
+
+@keyframes rotateRight {
+    to {
+        transform: rotate(360deg);
+    }
+
+    from {
+        transform: rotate(0deg);
+
+    }
+}
+
+
+
+@media (max-width:768px) {
+    .ServicesBody_top-col {
+        width: 100%;
+
+    }
+
+    .ServicesBody_top-content {
+        margin-top: 200px;
+    }
+
+    .ServicesBody_top {
+        margin-bottom: 100px;
+    }
+
+    .ServicesBody_bottom-item:hover p {
+        height: 120px;
+    }
+
+
+}
+
+
+@media (max-width:390px) {
+    .ServicesBody_top-animation div span {
+        font-size: 24px !important;
+    }
+    
+    .ServicesBody_top-animation {
+        width: 130px !important;
+        height: 130px !important;
+        top: 30% !important;
+        left: 15% !important;
+    }
+
+    .ServicesBody_top-animation-one {
+        width: 110px !important;
+        height: 110px !important;
+    }
+
+    .ServicesBody_top-animation::after {
+        width: 180px !important;
+        height: 180px !important;
+    }
+
+    .ServicesBody_top-animation::before {
+        width: 160px !important;
+        height: 160px !important;
+    }
+
+    .ServicesBody_top-content-open {
+        display: block;
+    }
+
+    .ServicesBody_open-door:nth-child(1) {
+        padding-right: 0;
+        border-right: 0px;
+    }
+
+    .ServicesBody_open-door:nth-child(2) {
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .ServicesBody_top-content button {
+        width: 50%;
+        margin-top: 20px;
+    }
+}
