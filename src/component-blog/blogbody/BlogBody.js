@@ -33,7 +33,7 @@ export default function BlogBody(props) {
         <div className="BlogBody">
             <Container>
                 <Row>
-                    <Col className="col-3">
+                    <Col className="col-3 BlogBody_col">
                         <div className="BlogBody_navbar">
                             <div className="BlogBody_navbar-item">
                                 <h5>Recent Articles</h5>
@@ -211,7 +211,7 @@ export default function BlogBody(props) {
                             </div>
                         </div>
                     </Col>
-                    <Col className="col-9">
+                    <Col className="col-9 BlogBody_col-right">
                         <Row className="BlogBody_row">
                             <Col className="BlogBody_col-item col-4">
                                 <div className="BlogBody_col-item-img">

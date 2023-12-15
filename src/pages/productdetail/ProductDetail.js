@@ -1,5 +1,5 @@
 import Header from '../../components/header/Header';
-import Navbar from "../../components-product/navbar/Navbar";
+
 import Footer from '../../components/footer/Footer';
 
 import { useEffect, useState } from 'react';
@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ListProduct from '../../components-product/listproduct/ListProduct';
 import NewProducts from '../../components-product/newproduct/NewProduct';
-
+import Navbar from '../../component-product-detail/navbar/Navbar';
 
 export default function ProductDetail(props) {
     const [data, setData] = useState();
@@ -26,18 +26,13 @@ export default function ProductDetail(props) {
 
     useEffect(() => {
         getData();
-        
     }, []);
-    
-    
 
-    
     return (
         <div className="ProductDetail">
             <Header data={data} />
             <Navbar data={data} />
-            
-            <ListProduct  data={data} />
+            <ListProduct data={data} />
             <NewProducts />
             <Footer />
         </div>

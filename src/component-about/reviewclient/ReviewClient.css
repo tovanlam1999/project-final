@@ -136,7 +136,7 @@ p {
 }
 
 
-@media (max-width:768px) {
+@media (max-width:767px) {
     .ReviewClient_col {
         width: 100%;
     }
@@ -182,14 +182,14 @@ p {
     }
 
     .ReviewClient-animation-1 {
-        top: -5%;
+        top: -8%;
         left: 8%;
         width: 30%;
     }
 
     .ReviewClient-animation-2 {
         width: 20%;
-        top: -2%;
+        top: -6%;
         left: 70%;
     }
 }

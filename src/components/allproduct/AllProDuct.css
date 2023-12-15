@@ -1,15 +1,14 @@
 .AllProDuct {
     text-align: center;
-    cursor: pointer;
+    overflow: hidden;
     margin: 50px 0;
-    position: relative;
 }
 
 .AllProDuct_hedding {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -21,10 +20,15 @@
 .AllProDuct_border-animation>.active {
     color: var(--color-btn);
 }
+
+.AllProDuct_body {
+    position: relative;
+}
+
 .AllProDuct_body-container {
     overflow: hidden;
-
 }
+
 .AllProDuct_row {
     flex-wrap: unset;
     margin-top: 50px;
@@ -134,24 +138,19 @@
 }
 
 
-@media (max-width:1023px) {
-    .AllProDuct_border-animation {
-        width: 40%;
-    }
 
-    .AllProDuct_hedding {
-        width: 75%;
-    }
-}
 
 @media (max-width:767px) {
-    .AllProDuct .prev-green {
-        position: unset;
-        display: none;
+    .AllProDuct_hedding {
+        width: 70%;
+    }
+
+    .AllProDuct_border-animation {
+        width: 33%;
     }
 
     .AllProDuct_hedding h2 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .AllProDuct_body .swiper {
@@ -159,16 +158,32 @@
         position: unset;
         transform: unset;
     }
+
+    .AllProDuct .prev-green {
+        width: 90%;
+    }
 }
 
 @media (max-width:390px) {
     .AllProDuct_body .swiper {
         width: 20%;
     }
+
     .AllProDuct_border-animation {
         width: 65%;
     }
+
     .AllProDuct_hedding {
-        flex-direction :column;
+        flex-direction: column;
+    }
+
+    .AllProDuct .prev-green {
+        position: unset;
+        transform: unset;
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
     }
 }

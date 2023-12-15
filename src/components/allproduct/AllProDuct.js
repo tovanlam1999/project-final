@@ -24,7 +24,7 @@ export default function AllProDuct(props) {
     useEffect(() => {
         getData();
     }, []);
-    
+
     const prevCol = () => {
         setActiveCol((prevCol) => (prevCol - 1 + data.length) % data.length);
     };
@@ -34,54 +34,22 @@ export default function AllProDuct(props) {
     };
     const handleCategoryClick = (index) => {
         setActiveCategory(index);
-        
     };
 
-    useEffect (() => {
+    useEffect(() => {
         if (activeCategory == 1) {
-            const filteredProducts = data.filter(item => item.sale >= 30)
-            setFilteredData(filteredProducts)
+            const filteredProducts = data.filter((item) => item.sale >= 30);
+            setFilteredData(filteredProducts);
         } else if (activeCategory == 2) {
-            const filteredProducts = data.filter(item => item.revew >= 60)
-            setFilteredData(filteredProducts)
+            const filteredProducts = data.filter((item) => item.revew >= 60);
+            setFilteredData(filteredProducts);
         } else {
-            setFilteredData(data)
+            setFilteredData(data);
         }
-    },[activeCategory,data])
-   console.log(filteredData)
+    }, [activeCategory, data]);
+    console.log(filteredData);
     return (
         <div className="AllProDuct">
-            <div className="prev-green">
-                <div className="prev-left" onClick={prevCol}>
-                    <i class="fa-solid fa-chevron-left"></i>
-                </div>
-                <div className="prev-right" onClick={nextCol}>
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-            </div>
-            {/* <div className="AllProDuct_hedding">
-                <div className="AllProDuct_border-animation col-4 active">
-                    <h2 className="active">Sản Phẩm Mới</h2>
-                    <span className="AllProDuct_border-top active"></span>
-                    <span className="AllProDuct_border-right active"></span>
-                    <span className="AllProDuct_border-bottom active"></span>
-                    <span className="AllProDuct_border-left active"></span>
-                </div>
-                <div className="AllProDuct_border-animation col-4">
-                    <h2>Bán Chạy Nhất</h2>
-                    <span className="AllProDuct_border-top"></span>
-                    <span className="AllProDuct_border-right"></span>
-                    <span className="AllProDuct_border-bottom"></span>
-                    <span className="AllProDuct_border-left"></span>
-                </div>
-                <div className="AllProDuct_border-animation col-4 ">
-                    <h2>Sản Phẩm Top </h2>
-                    <span className="AllProDuct_border-top"></span>
-                    <span className="AllProDuct_border-right"></span>
-                    <span className="AllProDuct_border-bottom"></span>
-                    <span className="AllProDuct_border-left"></span>
-                </div>
-            </div> */}
             <div className="AllProDuct_hedding">
                 {categories.map((category, index) => (
                     <div
@@ -100,17 +68,20 @@ export default function AllProDuct(props) {
             <div className="AllProDuct_body">
                 <Container className="AllProDuct_body-container">
                     <Row className="AllProDuct_row" style={{ transform: `translateX(-${activeCol * 25}%)` }}>
-                        {filteredData .map((item, index) => (
+                        {filteredData.map((item, index) => (
                             <Col sm="6" md="3">
                                 <Product product={item} index={index} />
                             </Col>
                         ))}
                     </Row>
                 </Container>
-                <div className="swiper">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div className="prev-green">
+                    <div className="prev-left" onClick={prevCol}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                    <div className="prev-right" onClick={nextCol}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
                 </div>
             </div>
         </div>

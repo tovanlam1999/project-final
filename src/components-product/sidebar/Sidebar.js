@@ -2,7 +2,7 @@ import { Col, Container, Row, Pagination, PaginationItem, PaginationLink } from 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import './Sidebar.css';
 import { useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import img from '../../img/card-img.jpg';
 import img1 from '../../img/card-img-1.jpg';
@@ -325,21 +325,18 @@ export default function Sidebar(args) {
                 </Row>
             </Container>
 
-            <div className='Sidebar_modal'>
-                <Button className="Sidebar_fixed" onClick={toggle}>
+            <div className="Sidebar_modal">
+                <div className="Sidebar_fixed" onClick={toggle}>
                     <i class="fa-solid fa-caret-right"></i>
-                </Button>
-                <Modal className='Sidebar_modal_wrap' isOpen={modal} toggle={toggle} {...args}>
-                    <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-                    <ModalBody >
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+                <Modal className="Sidebar_modal_wrap" isOpen={modal} toggle={toggle} {...args}>
+                   
+                    <ModalBody>
+                       <ul>
+                        <li><Link>Loại</Link></li>
+                       </ul>
                     </ModalBody>
                     <ModalFooter>
-                        
                         <Button color="secondary" onClick={toggle}>
                             Cancel
                         </Button>

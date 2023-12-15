@@ -259,7 +259,7 @@
 
 
 
-@media (max-width:768px) {
+@media (max-width:767px) {
     .ServicesBody_top-col {
         width: 100%;
 
@@ -285,7 +285,9 @@
     .ServicesBody_top-animation div span {
         font-size: 24px !important;
     }
-    
+    .ServicesBody {
+        margin-top: 20px !important;
+    }
     .ServicesBody_top-animation {
         width: 130px !important;
         height: 130px !important;

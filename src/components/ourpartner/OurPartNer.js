@@ -18,7 +18,7 @@ export default function OurPartNer() {
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 5000);
+        }, 6000);
 
         return () => {
             clearInterval(interval);
@@ -42,7 +42,7 @@ export default function OurPartNer() {
             <Container className="OurPartNer_container">
                 <Row className="OurPartNer_row" onTransitionEnd={handleTransitionEnd}>
                     {images.map((image, index) => (
-                        <Col
+                        <Col className='OurPartNer_col'
                             key={index}
                             md="3"
                             style={{ transform: `translateX(-${activeIndex * (100 / images.length)}%)`, transition: '0.5s' ,padding:"0"}}

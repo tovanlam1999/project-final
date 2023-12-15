@@ -114,13 +114,15 @@
     background-color: var(--color-primery);
 }
 
-@media (max-width:768px) {
+@media (max-width:767px) {
     .TakeCare_content {
         padding: 20px;
     }
-
+    .TakeCare_content p {
+        letter-spacing: 1px;
+    }
     .TakeCare_content h3 {
-        font-size: 22px
+        font-size: 21px
     }
 
     .TakeCare_social {

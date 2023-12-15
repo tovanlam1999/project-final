@@ -12,7 +12,7 @@ export default function BookYourSlot() {
         <div className="BookYourSlot">
             <Container>
                 <Row>
-                    <Col className="col-7">
+                    <Col className="col-7 BookYourSlot_col">
                         <div className="BookYourSlot_left">
                             <div className="BookYourSlot-img">
                                 <img src={img} />
@@ -72,7 +72,7 @@ export default function BookYourSlot() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="col-5">
+                    <Col className="col-5 BookYourSlot_col ">
                         <div className="BookYourSlot_right">
                             <div className="BookYourSlot_right-content">
                                 <h3>Chúng Tôi Luôn Sẵn Sàng Phục Vụ Bạn Và Thú Cưng Của Bạn</h3>

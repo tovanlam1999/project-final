@@ -1,0 +1,82 @@
+.Success {
+}
+
+.Success_header {
+    padding: 50px 0;
+    background-color: var(--color-primery);
+}
+
+.Success_icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 30px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: var(--color-primery);
+}
+
+.Success_icon i {
+    font-size: 60px;
+}
+
+.Success_body {
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.Success_body h3 {
+    font-size: 30px;
+    color: var(--color-primery);
+    font-weight: 600;
+    margin: 20px 0;
+}
+.Success_content h5 {
+    font-size: 30px;
+}
+.Success_content p {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.Success_content-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Success_content-title i {
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--color-primery);
+    color: #fff;
+    border-radius: 50%;
+}
+
+.Success_content-title h5 {}
+
+.Success_body-btn button {
+    background-color: var(--color-primery);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    margin: 0 20px;
+    transition: 0.5s;
+}
+.Success_body-btn button:hover {
+    background-color: var(--color-btn);
+}
+.Success_body-btn {
+    margin-top: 30px;
+}

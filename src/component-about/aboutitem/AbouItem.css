@@ -133,7 +133,7 @@
 
 
 
-@media (max-width:768px) {
+@media (max-width:767px) {
     .AbouItem_right-contact-desc p {
         font-size: 16px;
         font-weight: 600;
@@ -152,8 +152,12 @@
 }
 
 @media (max-width:390px) {
+    .AbouItem {
+        margin-top: 20px;
+    }
     .AbouItem_right-content h2 {
         font-size: 30px;
+        line-height: 45px;
     }
     .AbouItem_right-content p {
         font-size: 18px;

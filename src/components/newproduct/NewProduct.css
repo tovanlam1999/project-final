@@ -203,10 +203,8 @@ h2 {
     }
 }
 
-@media (max-width:768px) {
-    .NewProduct_bottom .prev-green {
-        display: none;
-    }
+@media (max-width:767px) {
+
 
     .NewProduct_bottom .swiper {
         position: unset;
@@ -227,5 +225,15 @@ h2 {
 
     .NewProduct>.border-animation h2 {
         font-size: 30px;
+    }
+
+    .NewProduct .prev-green {
+        position: unset;
+        transform: unset;
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
     }
 }

@@ -67,7 +67,7 @@ export default function Navbar(props) {
         // Thêm class 'active' cho thẻ <a> khi changeColor có giá trị
         if (changeColor !== null) {
             const navbarList = document.querySelectorAll('.navbar_list li');
-            
+
             navbarList.forEach((item, index) => {
                 if (index === changeColor) {
                     item.classList.add('active');
@@ -79,6 +79,10 @@ export default function Navbar(props) {
         // setSelectedLink(getLinkTextByIndex(activeIndex));
     }, [changeColor]);
     useEffect(() => {
+        window.scrollTo({
+            top: 400,
+            behavior: 'smooth',
+        });
         // Lấy giá trị của query parameter từ URL
         const urlParams = new URLSearchParams(window.location.search);
         const activeIndex = parseInt(urlParams.get('active'), 10);
@@ -90,7 +94,6 @@ export default function Navbar(props) {
         } else {
             setChangeColor(null);
         }
-        
     }, [location.pathname]);
     return (
         <div className="wrap">
@@ -115,7 +118,7 @@ export default function Navbar(props) {
                         <Link to={`/petshop/tin-tuc/`}>Tin Tức</Link>
                     </li>
                     <li className={changeColor === 5 ? 'active' : ''} onClick={() => handle_Click(5, 'Liên hệ')}>
-                        <Link to={`/petshop/lien-he/`}>Liên Hệ</Link>
+                        <Link to={`/petshop/lien-he`}>Liên Hệ</Link>
                     </li>
                 </ul>
             </Container>

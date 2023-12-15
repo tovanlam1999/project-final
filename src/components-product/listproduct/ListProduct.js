@@ -20,7 +20,7 @@ export default function ListProduct(props, args) {
     //click thêm sản phẩm vào giỏ hàng
     const toggle = () => {
         setModal(!modal);
-        localStorage.setItem('cart', JSON.stringify(data));
+        localStorage.setItem('cart', JSON.stringify(cart));
     };
     const handleButtonClick = (groupIndex, buttonIndex) => {
         // Lấy tất cả các button trong các nhóm và lặp qua từng button
@@ -45,9 +45,9 @@ export default function ListProduct(props, args) {
     };
     const handlePlusOrMinus = (calculate) => {
         if (calculate === 'minus' && value > 0) {
-            setValue(value - 1);
+            setValue((prevValue) => prevValue - 1);
         } else if (calculate === 'plus') {
-            setValue(value + 1);
+            setValue((prevValue) => prevValue + 1);
         }
     };
 
@@ -59,6 +59,9 @@ export default function ListProduct(props, args) {
             console.log(error);
         }
     }
+    useEffect(() => {
+        calculateTotalPrice();
+    }, [value, cart]);
 
     useEffect(() => {
         getListCard();
@@ -71,7 +74,7 @@ export default function ListProduct(props, args) {
         getListCard();
         // Lấy dữ liệu từ localStorage
         const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-        console.log('Stored Cart:', storedCart);
+
         setCart(storedCart);
     }, []);
 
@@ -87,29 +90,38 @@ export default function ListProduct(props, args) {
 
     const handle_add = (id) => {
         setModal(!modal);
-    
+
         // Tìm sản phẩm trong danh sách (listCard) dựa trên id
-        const item = listCard.find((item) => item.id == id);
-    
+        const item = listCard.find((item) => item.id === id);
+
         // Kiểm tra xem cart có phải là mảng không
         if (!Array.isArray(cart)) {
             setCart([{ ...item, qty: 1 }]);
             localStorage.setItem('cart', JSON.stringify([{ ...item, qty: 1 }]));
             return;
         }
-    
+
         // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng hay chưa
-        const index = cart.findIndex((item) => item.id == id);
-    
+        const index = cart.findIndex((item) => item.id === id);
+
         if (index >= 0) {
             // Nếu sản phẩm đã tồn tại trong giỏ hàng, tăng số lượng
-            const newCart = [...cart];
-            newCart[index]['qty']++;
-            setCart(newCart);
+            setCart((prevCart) => {
+                const newCart = [...prevCart];
+                newCart[index]['qty']++;
+                return [
+                    ...newCart.slice(0, index),
+                    { ...item, qty: newCart[index]['qty'] },
+                    ...newCart.slice(index + 1),
+                ];
+            });
         } else {
             // Nếu sản phẩm chưa có trong giỏ hàng, thêm vào giỏ hàng với số lượng là 1
-            setCart([...cart, { ...item, qty: 1 }]);
+            setCart((prevCart) => [...prevCart, { ...item, qty: 1 }]);
         }
+
+        // Cập nhật giá tổng sau khi thêm sản phẩm
+        calculateTotalPrice();
         localStorage.setItem('cart', JSON.stringify([...cart, { ...item, qty: 1 }]));
     };
 
@@ -126,7 +138,7 @@ export default function ListProduct(props, args) {
             // Cộng vào tổng
             return acc + itemTotal;
         }, 0);
-       
+
         // Định dạng số với dấu phẩy ngăn cách
         const formattedTotal = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total);
 

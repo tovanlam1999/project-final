@@ -42,14 +42,6 @@ export default function NewProduct(props) {
                 <span className="border-left"></span>
             </div>
             <div className="NewProduct_bottom">
-                <div className="prev-green">
-                    <div className="prev-left" onClick={prevCol}>
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </div>
-                    <div className="prev-right" onClick={nextCol}>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </div>
-                </div>
                 <Container className="NewProduct_container">
                     <Row className="NewProduct_row " style={{ transform: `translateX(-${activeCol * 33.3333}%)` }}>
                         {data.map((item, index) => (
@@ -59,10 +51,13 @@ export default function NewProduct(props) {
                         ))}
                     </Row>
                 </Container>
-                <div className="swiper">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div className="prev-green">
+                    <div className="prev-left" onClick={prevCol}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                    <div className="prev-right" onClick={nextCol}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
                 </div>
             </div>
         </div>

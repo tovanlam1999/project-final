@@ -1,0 +1,209 @@
+.CheckOutItem_form {
+    border: 1px solid #000;
+    padding: 50px;
+}
+
+.CheckOutItem_form h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.CheckOutItem_form input::placeholder {
+    color: #737373;
+}
+
+.CheckOutItem_oder h4,
+.CheckOutItem_form h4 {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--color-border);
+}
+
+.CheckOutItem_fullname {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CheckOutItem_fullname label {
+    width: 45%;
+}
+.CheckOutItem_fullname label input:focus {
+    border: 1px solid #a9a8a8 !important ;
+}
+.CheckOutItem_street input,
+.CheckOutItem_email input,
+.CheckOutItem_phone input,
+.CheckOutItem_company input,
+.CheckOutItem_fullname label input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 30px;
+    outline: none;
+    border: 1px solid var(--color-border);
+}
+
+.CheckOutItem_company {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.CheckOutItem_address {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.CheckOutItem_street {
+    width: 100%;
+}
+
+.CheckOutItem_street input {
+    margin: 10px 0;
+}
+
+.CheckOutItem_email,
+.CheckOutItem_phone {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.CheckOutItem_email {}
+
+.CheckOutItem_note {
+    width: 100%;
+}
+
+.CheckOutItem_note textarea {
+    width: 100%;
+    border-radius: 30px;
+    padding: 20px;
+    height: 150px;
+
+}
+
+.CheckOutItem_oder {
+    border: 1px solid var(--color-border);
+    padding: 50px;
+    margin-top: 50px;
+
+}
+
+.CheckOutItem_oder h6 {}
+
+.CheckOutItem_your-oder {}
+
+.CheckOutItem_product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    padding: 20px 0;
+}
+
+.CheckOutItem_product-left {
+    display: flex;
+    width: 50%;
+    align-items: center;
+}
+
+.CheckOutItem_product-left span {
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+.CheckOutItem_product-left span:nth-child(1) {
+    font-size: 20px;
+}
+
+.CheckOutItem_product-left span:nth-child(2) {
+    font-weight: 800s;
+}
+
+.CheckOutItem_product-img {
+    width: 20%;
+    margin-right: 20px;
+}
+
+.CheckOutItem_total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.CheckOutItem_total span {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.CheckOutItem_total:nth-child(1),
+.CheckOutItem_total:nth-child(2) {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.CheckOutItem_product {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.CheckOutItem_submit p {
+    margin: 20px 0;
+}
+
+.CheckOutItem_submit p a {
+    color: #000;
+    margin: 0 5px;
+}
+
+.CheckOutItem_submit  button {
+    padding: 12px 20px;
+    border-radius: 30px;
+    background-color: var(--color-btn);
+    color: #fff;
+    font-weight: 600;
+    transition: 0.5s;
+    width: 20%;
+}
+
+
+.CheckOutItem_submit  button:hover {
+    background-color: var(--color-primery);
+}
+.CheckOutItem_sale {
+    margin: 20px 0;
+    padding: 30px;
+    border-top: 4px solid var(--color-primery);
+    background-color: #fafafa;
+    color: #000;
+    font-size: 20px;
+}
+.CheckOutItem_error {
+    margin: 20px 0;
+    padding: 30px;
+    border-top: 4px solid var(--color-btn);
+    background-color: #fafafa;
+    color: #000;
+    font-size: 20px;
+    display: none;
+}
+
+
+.CheckOutItem_error a {
+    color: #000;
+    margin-left: 10px;
+}
+
+
+
+.obligatory {
+    margin-left: 10px;
+    color: #ff0000;
+}
+
+.CheckOutItem_error-item {
+    display: flex;
+}

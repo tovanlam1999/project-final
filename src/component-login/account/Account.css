@@ -116,7 +116,7 @@
     display: inline-block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .Account  {
         width: 70%;
     }

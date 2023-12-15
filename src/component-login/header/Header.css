@@ -1,6 +1,7 @@
 :root {
     --color-primery: #a0b200;
     --color-btn: #f56c28;
+    --color-border: #232121;
     --font-serif: Montserrat, sans-serif;
     --font-family: 'Chewy', cursive;
 }
@@ -48,6 +49,7 @@ ul {
 
 .header_mid-item:hover::after {
     width: 100%;
+
     left: 0;
 }
 
@@ -74,14 +76,12 @@ ul {
     font-size: 22px;
 }
 
-.header_right div {
+.header_right > div {
     margin: 0 15px;
-    
-    position: relative;
     color: #000;
     text-align: center;
 }
-.header_right div a {
+.header_right > div > a {
     transition: 0.5s;
     text-decoration: none;
     color: #000;
@@ -106,8 +106,8 @@ ul {
     font-size: 18px;
 }
 
-.header_right div:hover a {
-    color: var(--color-btn);
+.header_right > div:hover > a {
+    color: var(--color-btn) !important;
 }
 
 
@@ -302,7 +302,7 @@ ul {
 
 /* reponsive */
 
-@media (max-width:1024px) {
+@media (min-width:1024px) {
     .modal.show .modal-dialog {
         height: 100%;
         float: right;
@@ -346,11 +346,12 @@ ul {
     }
 }
 
-@media (max-width:768px) {
+@media (max-width:767px) {
     .modal.show .modal-dialog {
-        right:0%;
+        height: 85%;
+        float: right;
         width: 100%;
-        top: 25%;
+        top: 22%;
     }
     .sreach,
     .shopping,
@@ -386,7 +387,7 @@ ul {
         padding: 0 30px;
     }
     .modal.show .modal-dialog {
-        height: 80%;
-        top: 20%;
+        height: 90%;
+        top: 23%;
     }
 }

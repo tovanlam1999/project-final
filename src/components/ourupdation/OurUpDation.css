@@ -142,6 +142,7 @@
 
 .OurUpDation_right button {
     width: 60%;
+    margin-top: 20px;
 }
 
 .OurUpDation_right {
@@ -213,7 +214,7 @@
     }
 }
 
-@media (max-width:768px) {
+@media (max-width:767px) {
     .OurUpDation_img-bottom,
     .OurUpDation_img-right {
         width: 100%;
@@ -228,7 +229,7 @@
         width: 100%;
     }
     .OurUpDation .border-animation {
-        width: 70%;
+        width: 50%;
     }
     .OurUpDation_row {
         gap: 20px;
@@ -238,6 +239,10 @@
     }
     .OurUpDation_right {
         margin-top: 50px;
+    }
+
+    .OurUpDation_h2 {
+        font-size: 40px;
     }
 }
 
